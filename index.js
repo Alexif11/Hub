@@ -33,9 +33,9 @@ client.on("ready", async () => {
     const created = moment().format("YYYY-MM-DD HH:mm:ss ");
 
     const ikgasm1 =
-      "https://media.discordapp.net/attachments/1155965892853760030/1181783912985403472/c348de3b700f722339249721f97dc039.gif?ex=65a73b09&is=6594c609&hm=16416732c94b78b3ba9628faa38e0b03631e8a2a72c480dd3a0c3b3e3a3544b9&"; //รูปใหญ่
+      "https://media.discordapp.net/attachments/1191267411698143314/1207278183863418900/tumblr_8341f5aedab6256f573ac27109f788cc_f745c965_640.gif?ex=65df106d&is=65cc9b6d&hm=8ee137ceedb9494baa55cf2f9d65014fbfacf25fb74c00589ceb3d21f64f5c79&"; //รูปใหญ่
     const ikgasm2 =
-      "https://media.discordapp.net/attachments/1155965892853760030/1156600121069424732/4c172dbbad6d969caf0139f4c742f3b8.gif?ex=65a7e5cd&is=659570cd&hm=4602e66a1e684cca11e232ef206b81a2a282f947eb113670ac57480d0ceff384&"; // รูปเล็ก
+      "https://media.discordapp.net/attachments/1191267411698143314/1207278139756249138/882818659ff02a335e6410dbcc07a52a.gif?ex=65df1062&is=65cc9b62&hm=fa74c2af06d7faf8848002e1530f5a3f8808bd6bf3863fd1825dafa0c35ccf66&; // รูปเล็ก
     const ikgas2 = "คิดถึงแฟ้ม"; // ข้อความตรง กำลังเล่น
     const ikga1 = "🌪🌪"; // ชื่อ ปุ่ม 1
     const ikga2 = "https://youtu.be/R7cBD3mK3oA"; // ลิ้ง ปุ่ม 1
