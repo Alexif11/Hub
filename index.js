@@ -7,6 +7,7 @@ const client = new Discord.Client({
     checkUpdate: false
 });
 const express = require('express')
+const keepAliveServer =require("./keep_alive.js");
 const app = express();
 const port = 8000
 
