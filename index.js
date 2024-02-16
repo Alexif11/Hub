@@ -1,56 +1,59 @@
-
-                // IKGA SOURCE https://discord.gg/ikgas V.3
-
-const { Client, Intents } = require("discord.js-selfbot-v13");
+const { Client, Intents } = require("discord.js");
 const keepAliveServer =require("./keep_alive.js");
-const Discord = require("discord.js-selfbot-v13");
-const readline = require("readline-sync");
-const m = require("moment-duration-format");
-const exp = require("express");
-const os = require("os");
 const si = require("systeminformation");
-const s = exp();
-const express = require("express");
-const app = express();
-const port = 8000;
+const moment = require("moment");
+const exp = require("express");
 
-app.get('/', (req, res) => res.send('ทำงานเรียบร้อยแล้ว'))
-app.listen(port, () =>
-    console.log(`Your app is listening at http://localhost:${port}`)
-);
+const app = exp();
+const port = process.env.PORT || 8000;
 
-// กำหนดข้อความในเม็ดม่วง
+app.get("/", (req, res) => res.send("Bot is running smoothly"));
+app.listen(port, () => console.log(`App is listening at http://localhost:${port}`));
 
-//---------------------------------
-
-const text1 = "คิดถึงแฟ้มมมมม";
-
-const text2 = "P9D";
-
-const text3 = "1mill";
-//--------------------------------
-
-
-const texts = ["Youtube", "Instagram", "FiveM"];
-
-const ing1 = "https://media.discordapp.net/attachments/1191267411698143314/1207278184307892244/tumblr_6b22a438a4aafc79300ee98eda9e29d5_43f62595_640.gif?ex=65df106d&is=65cc9b6d&hm=fbbee5ced79604e6c988598217cc3580f8b9090624255debfbf3cd024f51e101&";
-const ing2 = "https://media.discordapp.net/attachments/1191267411698143314/1207278140188270642/86bb9a1f7af56acca41038cc1bc84ddc.gif?ex=65df1062&is=65cc9b62&hm=db5f697cf714375471ff854c291245aadc07652878e974da33272251b52085b1&";
-
-const nameButtonone = "" || "📸 Instagram";
-const linkButtonone = "" || "https://www.instagram.com/b2n_3x?igsh=bTVvN2hweDY3cGY2";
-const nameButtonone = "📺 YOUTUBE";
-const linkButtonone = "https://youtu.be/VgOzPNQ4-Qw";
-const stateTexts = [
-    `﹝ ${text1} ﹞`,
-    `﹝ ${text2} ﹞`,
-    `﹝ ${text3} ﹞`
-];
-
-app.get('/', (req, res) => {
-    res.send('กำลังทำงาน');
+const client = new Client({
+  checkUpdate: false,
 });
 
+client.on("ready", async () => {
+  console.log(`${client.user.username} is ready!`);
 
-client.on('ready', async () => {
-	console.log(`🟣: ${client.user.username}`);
+  updatePresence();
 
+  const presenceUpdateInterval = setInterval(() => {
+    updatePresence();
+  }, 1000 * 60);
+});
+
+client.login(process.env["token"]);
+
+async function updatePresence() {
+  try {
+    const cpuInfo = await si.cpu();
+    const mem = await si.mem();
+    const cpuSpeed = cpuInfo.speed;
+    const totalRam = mem.total;
+    const usedRam = mem.used;
+
+    const cpuText = cpuSpeed ? `${cpuSpeed.toFixed(1)} GHz` : "N/A";
+    const ramText = totalRam && usedRam ? `RAM: ${((usedRam / totalRam) * 100).toFixed(1)}%` : "N/A";
+
+    const presence = new Client.RichPresence()
+      .setApplicationId("1159828579241177100")
+      .setType("STREAMING")
+      .setURL("https://youtu.be/Fc-dbtAOzx8")
+      .setState("🐶 คิดถึงแฟ้มอ่ะ")
+      .setName("YOUTUBE")
+      .setDetails(`CPU: ${cpuText} | ${ramText}`)
+      .setAssetsSmallImage("https://media.discordapp.net/attachments/1191267411698143314/1207278139756249138/882818659ff02a335e6410dbcc07a52a.gif")
+      .setAssetsLargeImage("https://media.discordapp.net/attachments/1191267411698143314/1207278183863418900/tumblr_8341f5aedab6256f573ac27109f788cc_f745c965_640.gif")
+      .setAssetsLargeText(`🌡️ ${temperature.toFixed(1)} °C | 🍃 ${Math.round(client.ws.ping)} m/s`)
+      .setStartTimestamp(Date.now())
+      .setEndTimestamp(Date.now())
+      .addButton("📺 YOUTUBE", "https://youtu.be/Fl16Kw8OxeI")
+      .addButton("📸 Instagram", "https://www.instagram.com/b2n_3x?igsh=bTVvN2hweDY3cGY2");
+
+    client.user.setActivity(presence);
+  } catch (err) {
+    console.error("Error updating presence:", err.message);
+  }
+}
