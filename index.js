@@ -1,14 +1,17 @@
-import { Client, Intents } from "discord.js-selfbot-v13";
-import si from "systeminformation";
-import exp from "express";
-import keepAliveServer from "./keep_alive.js";
-import fetch from "node-fetch";
+const { Client, Intents } = require("discord.js");
+const si = require("systeminformation");
+const express = require("express");
+const keepAliveServer = require("./keep_alive.js");
+const fetch = require("node-fetch");
 
-const app = exp();
-const port = process.env.PORT || 8000; 
+const app = express();
+const port = process.env.PORT || 8000;
 
-app.get("/", (req, res) => res.send("Bot is running smoothly"));
-app.listen(port, () => console.log(`App is listening at http://localhost:${port}`));
+const botName = "YourBotName";
+const version = "1.0.0";
+
+app.get("/", (req, res) => res.send(`${botName} v${version} is running smoothly`));
+app.listen(port, () => console.log(`Your app is listening at http://localhost:${port}`));
 
 const client = new Client({
   intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
@@ -16,13 +19,13 @@ const client = new Client({
 });
 
 client.on("ready", async () => {
-  console.log(`${client.user.username} is ready!`);
+  console.log(`${client.user.tag} is ready!`);
 
-  updatePresence(); 
+  updatePresence();
 
   const presenceUpdateInterval = setInterval(() => {
     updatePresence();
-  }, 1000 * 60); 
+  }, 1000 * 60);
 });
 
 client.on("messageCreate", async (message) => {
@@ -44,23 +47,31 @@ async function updatePresence() {
     const cpuText = cpuSpeed ? `${cpuSpeed.toFixed(1)} GHz` : "N/A";
     const ramText = totalRam && usedRam ? `RAM: ${((usedRam / totalRam) * 100).toFixed(1)}%` : "N/A";
 
-    const presence = new Client.RichPresence()
-      .setApplicationId("1159828579241177100")
-      .setType("STREAMING")
-      .setURL("https://youtu.be/Fc-dbtAOzx8")
-      .setState("🎮 Playing")
-      .setName("📺 YOUTUBE")
-      .setDetails(`💻 CPU: ${cpuText} | ${ramText}`)
-      .setAssetsSmallImage("https://media.discordapp.net/attachments/1191267411698143314/1207278139756249138/882818659ff02a335e6410dbcc07a52a.gif")
-      .setAssetsLargeImage("https://media.discordapp.net/attachments/1191267411698143314/1207278183863418900/tumblr_8341f5aedab6256f573ac27109f788cc_f745c965_640.gif")
-      .setAssetsLargeText(`⌚ Time: ${getTime()} minutes`)
-      .setAssetsSmallText(`${cpuText}, ${ramText}`)
-      .addButton("🔗 Watch on YouTube", "https://youtu.be/R7cBD3mK3oA")
-      .addButton("📸 Instagram", "https://www.instagram.com/b2n_3x?igsh=bTVvN2hweDY3cGY2")
-      .setStartTimestamp(Date.now())
-      .setEndTimestamp(Date.now());
+    const presence = {
+      activities: [
+        {
+          name: "📺 YOUTUBE",
+          type: "STREAMING",
+          url: "https://youtu.be/Fc-dbtAOzx8",
+          details: `CPU: ${cpuText} | ${ramText}`,
+          state: "🎮 Playing",
+          startTimestamp: Date.now(),
+          endTimestamp: Date.now() + 3600 * 1000,
+          assets: {
+            largeImage: "https://media.discordapp.net/attachments/1191267411698143314/1207278183863418900/tumblr_8341f5aedab6256f573ac27109f788cc_f745c965_640.gif",
+            largeText: `⌚ Time: ${getTime()} minutes`,
+            smallImage: "https://media.discordapp.net/attachments/1191267411698143314/1207278139756249138/882818659ff02a335e6410dbcc07a52a.gif",
+            smallText: `${cpuText}, ${ramText}`,
+          },
+          buttons: [
+            { label: "🔗 Watch on YouTube", url: "https://youtu.be/R7cBD3mK3oA" },
+            { label: "📸 Instagram", url: "https://www.instagram.com/b2n_3x?igsh=bTVvN2hweDY3cGY2" },
+          ],
+        },
+      ],
+    };
 
-    client.user.setActivity(presence);
+    client.user.setPresence(presence);
   } catch (err) {
     console.error("Error updating presence:", err.message);
   }
