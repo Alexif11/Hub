@@ -106,12 +106,6 @@ async function getSystemInfo() {
   }
 }
 
-let endTime = new Date().setHours(24 + 6, 0, 0, 0),
-  today = new Date().setHours(0, 0, 0, 0),
-  dayCount = Math.floor(
-    (today - new Date(2024, 0).getTime()) / (24 * 60 * 60 * 1000),
-  );
-
 var date =
   new Date().getDate() +
   "/" +
