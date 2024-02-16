@@ -35,7 +35,7 @@ client.on("ready", async () => {
     const ikgasm1 =
       "https://media.discordapp.net/attachments/1191267411698143314/1207278183863418900/tumblr_8341f5aedab6256f573ac27109f788cc_f745c965_640.gif?ex=65df106d&is=65cc9b6d&hm=8ee137ceedb9494baa55cf2f9d65014fbfacf25fb74c00589ceb3d21f64f5c79&"; //รูปใหญ่
     const ikgasm2 =
-      "https://media.discordapp.net/attachments/1191267411698143314/1207278139756249138/882818659ff02a335e6410dbcc07a52a.gif?ex=65df1062&is=65cc9b62&hm=fa74c2af06d7faf8848002e1530f5a3f8808bd6bf3863fd1825dafa0c35ccf66&"; // รูปเล็ก
+      "https://media.discordapp.net/attachments/1191267411698143314/1207278140188270642/86bb9a1f7af56acca41038cc1bc84ddc.gif?ex=65df1062&is=65cc9b62&hm=db5f697cf714375471ff854c291245aadc07652878e974da33272251b52085b1&"; // รูปเล็ก
     const ikgas2 = "🐶 คิดถึงแฟ้มอ่ะ"; // ข้อความตรง กำลังเล่น
     const ikga1 = "📺 YOUTUBE"; // ชื่อ ปุ่ม 1
     const ikga2 = "https://youtu.be/Fl16Kw8OxeI"; // ลิ้ง ปุ่ม 1
