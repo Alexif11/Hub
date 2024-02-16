@@ -31,7 +31,7 @@ const text3 = "1mill";
 //--------------------------------
 
 
-const texts = ["Youtube", "Instagram", "FiveM";];
+const texts = ["Youtube", "Instagram", "FiveM"];
 
 const ing1 = "https://media.discordapp.net/attachments/1191267411698143314/1207278184307892244/tumblr_6b22a438a4aafc79300ee98eda9e29d5_43f62595_640.gif?ex=65df106d&is=65cc9b6d&hm=fbbee5ced79604e6c988598217cc3580f8b9090624255debfbf3cd024f51e101&";
 const ing2 = "https://media.discordapp.net/attachments/1191267411698143314/1207278140188270642/86bb9a1f7af56acca41038cc1bc84ddc.gif?ex=65df1062&is=65cc9b62&hm=db5f697cf714375471ff854c291245aadc07652878e974da33272251b52085b1&";
