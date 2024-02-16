@@ -52,19 +52,16 @@ client.on("ready", async () => {
     const cpuText = cpuSpeed ? `${cpuSpeed.toFixed(1)} GHz` : "N/A";
     const ramText = totalRam && usedRam ? `RAM: ${((usedRam / totalRam) * 100).toFixed(1)}%` : "N/A";
 
-      const temperature = getTemperature();
-	const user = new Discord.RichPresence()
+      const r = new Discord.RichPresence()
         .setApplicationId("1159828579241177100")
         .setType("STREAMING")
         .setURL("https://youtu.be/Fc-dbtAOzx8")
-        .setStartTimestamp(Date.now())
+        .setState(`${ikgas2}`)
         .setName(`YOUTUBE`)
         .setDetails(`CPU: ${cpuText} | ${ramText}`)
         .setAssetsSmallImage(`${ikgasm2}`)
         .setAssetsLargeImage(`${ikgasm1}`)
         .setAssetsLargeText(`⌚ เวลา :${getTime()} นาที`)
-        ${temperature.toFixed(1)} °C | 🍃 
-        ${Math.round(client.ws.ping)} m/s`)
         .setAssetsSmallText(`${cpuText}, ${ramText}`)
         .addButton(`${ikga1}`, `${ikga2}`)
         .addButton(`${ikga3}`, `${ikga4}`)
@@ -109,10 +106,6 @@ async function getSystemInfo() {
   }
 }
 
-async function sleep(ms) {
-	return new Promise(resolve => setTimeout(resolve, ms));
-}
-
 let endTime = new Date().setHours(24 + 6, 0, 0, 0),
   today = new Date().setHours(0, 0, 0, 0),
   dayCount = Math.floor(
@@ -136,12 +129,6 @@ let options = {
   minute: "numeric",
   hour12: false,
 };
-
-function getCurrentTime() {
-	const a = new Date(Date());
-	const c = { timeZone: "Asia/Bangkok", hour: "2-digit", minute: "2-digit", hour24: false };
-	return a.toLocaleTimeString("th-TH", c);
-}
 
 function getDate() {
   return new Date()
