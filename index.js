@@ -7,7 +7,7 @@ const fetch = require("node-fetch");
 const app = express();
 const port = process.env.PORT || 8000;
 
-const botName = "YourBotName";
+const botName = "BEN10";
 const version = "1.0.0";
 
 app.get("/", (req, res) => res.send(`${botName} v${version} is running smoothly`));
