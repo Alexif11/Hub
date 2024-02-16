@@ -4,6 +4,10 @@ const express = require("express");
 const keepAliveServer = require("./keep_alive.js");
 const fetch = require("node-fetch");
 
+// เพิ่มโค้ดการติดตั้ง discord.js ตรงนี้
+npm install discord.js
+const discord = require("discord.js");
+
 const app = express();
 const port = process.env.PORT || 8000;
 
@@ -50,7 +54,7 @@ async function updatePresence() {
     const presence = {
       activities: [
         {
-          name: "🐶 คิดถึงแฟ้มอ่ะ",
+          name: "📺 YOUTUBE",
           type: "STREAMING",
           url: "https://youtu.be/Fc-dbtAOzx8",
           details: `CPU: ${cpuText} | ${ramText}`,
