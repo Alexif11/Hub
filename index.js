@@ -125,9 +125,9 @@ let options = {
   year: "numeric",
   month: "numeric",
   day: "numeric",
-  hour: "numeric",
-  minute: "numeric",
-  hour12: false,
+  hour: "2-digit",
+  minute: "2-digit",
+  hour24: false,
 };
 
 function getDate() {
