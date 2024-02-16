@@ -1,16 +1,15 @@
-const { Client, Intents } = require("discord.js");
+const { Client, Intents } = require("discord.js-selfbot-v13");
+const keepAliveServer =require("./keep_alive.js");
+const Discord = require("discord.js-selfbot-v13");
+const readline = require("readline-sync");
+const m = require("moment-duration-format");
+const exp = require("express");
+const os = require("os");
 const si = require("systeminformation");
+const s = exp();
 const express = require("express");
-const keepAliveServer = require("./keep_alive.js");
-const fetch = require("node-fetch");
-
-// เพิ่มโค้ดการติดตั้ง discord.js ตรงนี้
-npm install discord.js
-const discord = require("discord.js");
-
 const app = express();
-const port = process.env.PORT || 8000;
-
+const port = 8000;
 const botName = "BEN10";
 const version = "1.0.0";
 
@@ -54,7 +53,7 @@ async function updatePresence() {
     const presence = {
       activities: [
         {
-          name: "📺 YOUTUBE",
+          name: "🐶 คิดถึงแฟ้มอ่ะ",
           type: "STREAMING",
           url: "https://youtu.be/Fc-dbtAOzx8",
           details: `CPU: ${cpuText} | ${ramText}`,
