@@ -50,7 +50,7 @@ async function updatePresence() {
     const presence = {
       activities: [
         {
-          name: "📺 YOUTUBE",
+          name: "🐶 คิดถึงแฟ้มอ่ะ",
           type: "STREAMING",
           url: "https://youtu.be/Fc-dbtAOzx8",
           details: `CPU: ${cpuText} | ${ramText}`,
