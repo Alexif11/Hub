@@ -1,8 +1,8 @@
-const { Client, Intents } = require("discord.js-selfbot-v13");
-const si = require("systeminformation");
-const exp = require("express");
-const keepAliveServer =require("./keep_alive.js");
-const fetch = require("node-fetch");
+import { Client, Intents } from "discord.js-selfbot-v13";
+import si from "systeminformation";
+import exp from "express";
+import keepAliveServer from "./keep_alive.js";
+import fetch from "node-fetch";
 
 const app = exp();
 const port = process.env.PORT || 8000; 
