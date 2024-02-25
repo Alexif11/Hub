@@ -54,7 +54,7 @@ client.on("ready", async () => {
 
       const r = new Discord.RichPresence()
         .setApplicationId("1159828579241177100")
-        .setType("ใครจะไปสู้หนุ่มชนบทเทอได้")
+        .setType("STREAMING")
         .setURL("https://youtu.be/Fc-dbtAOzx8")
         .setState(`${ikgas2}`)
         .setName(`YOUTUBE`)
