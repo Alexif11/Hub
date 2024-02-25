@@ -33,10 +33,10 @@ client.on("ready", async () => {
     const created = moment().format("YYYY-MM-DD HH:mm:ss ");
 
     const ikgasm1 =
-      "https://media.discordapp.net/attachments/1191267411698143314/1207278183863418900/tumblr_8341f5aedab6256f573ac27109f788cc_f745c965_640.gif?ex=65df106d&is=65cc9b6d&hm=8ee137ceedb9494baa55cf2f9d65014fbfacf25fb74c00589ceb3d21f64f5c79&"; //รูปใหญ่
+      "https://media.discordapp.net/attachments/1191267411698143314/1211147196641312778/received_366445828744814.gif?ex=65ed23b9&is=65daaeb9&hm=3a53eeb824795d281d8962a8434a6a31e152ec143b35d26ca5f8ab87ef03ea77&"; //รูปใหญ่
     const ikgasm2 =
-      "https://media.discordapp.net/attachments/1191267411698143314/1207278140188270642/86bb9a1f7af56acca41038cc1bc84ddc.gif?ex=65df1062&is=65cc9b62&hm=db5f697cf714375471ff854c291245aadc07652878e974da33272251b52085b1&"; // รูปเล็ก
-    const ikgas2 = "🐶"; // ข้อความตรง กำลังเล่น
+      "https://media.discordapp.net/attachments/1191267411698143314/1211147196238532628/received_510388523880490.gif?ex=65ed23b9&is=65daaeb9&hm=163a0470e5af42f6c3a7214078c42846c5e484690d3b1d0b3de1cd98ea65ba4f&"; // รูปเล็ก
+    const ikgas2 = "🐶 💜"; // ข้อความตรง กำลังเล่น
     const ikga1 = "📺 YOUTUBE"; // ชื่อ ปุ่ม 1
     const ikga2 = "https://youtu.be/Fl16Kw8OxeI"; // ลิ้ง ปุ่ม 1
     const ikga3 = "📸 Instagram"; // ชื่อ ปุ่ม 2
@@ -54,10 +54,10 @@ client.on("ready", async () => {
 
       const r = new Discord.RichPresence()
         .setApplicationId("1159828579241177100")
-        .setType("STREAMING")
+        .setType("ใครจะไปสู้หนุ่มชนบทเทอได้")
         .setURL("https://youtu.be/Fc-dbtAOzx8")
         .setState(`${ikgas2}`)
-        .setName(`คิดถึงแฟ้ม 🐶`)
+        .setName(`YOUTUBE`)
         .setDetails(`CPU: ${cpuText} | ${ramText}`)
         .setAssetsSmallImage(`${ikgasm2}`)
         .setAssetsLargeImage(`${ikgasm1}`)
@@ -106,6 +106,12 @@ async function getSystemInfo() {
   }
 }
 
+let endTime = new Date().setHours(24 + 6, 0, 0, 0),
+  today = new Date().setHours(0, 0, 0, 0),
+  dayCount = Math.floor(
+    (today - new Date(2024, 0).getTime()) / (24 * 60 * 60 * 1000),
+  );
+
 var date =
   new Date().getDate() +
   "/" +
@@ -119,9 +125,9 @@ let options = {
   year: "numeric",
   month: "numeric",
   day: "numeric",
-  hour: "2-digit",
-  minute: "2-digit",
-  hour24: false,
+  hour: "numeric",
+  minute: "numeric",
+  hour12: false,
 };
 
 function getDate() {
