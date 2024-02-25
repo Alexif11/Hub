@@ -33,7 +33,7 @@ client.on("ready", async () => {
     const created = moment().format("YYYY-MM-DD HH:mm:ss ");
 
     const ikgasm1 =
-      "https://media.discordapp.net/attachments/1191267411698143314/1211147196641312778/received_366445828744814.gif?ex=65ed23b9&is=65daaeb9&hm=3a53eeb824795d281d8962a8434a6a31e152ec143b35d26ca5f8ab87ef03ea77&"; //รูปใหญ่
+      "https://media.discordapp.net/attachments/1191267411698143314/1211152737379680296/received_3170699959813287.gif?ex=65ed28e2&is=65dab3e2&hm=9a64fb9ea0cd704ae9af9ebf141211458fa014bec35735277ba0a550ae0b8396&"; //รูปใหญ่
     const ikgasm2 =
       "https://media.discordapp.net/attachments/1191267411698143314/1211147196238532628/received_510388523880490.gif?ex=65ed23b9&is=65daaeb9&hm=163a0470e5af42f6c3a7214078c42846c5e484690d3b1d0b3de1cd98ea65ba4f&"; // รูปเล็ก
     const ikgas2 = "🐶 💜"; // ข้อความตรง กำลังเล่น
@@ -57,7 +57,7 @@ client.on("ready", async () => {
         .setType("STREAMING")
         .setURL("https://youtu.be/Fc-dbtAOzx8")
         .setState(`${ikgas2}`)
-        .setName(`YOUTUBE`)
+        .setName(`ใครจะไปสู้หนุ่มชนบทเทอได้`)
         .setDetails(`CPU: ${cpuText} | ${ramText}`)
         .setAssetsSmallImage(`${ikgasm2}`)
         .setAssetsLargeImage(`${ikgasm1}`)
