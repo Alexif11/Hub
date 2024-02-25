@@ -36,7 +36,7 @@ client.on("ready", async () => {
       "https://media.discordapp.net/attachments/1191267411698143314/1211152737379680296/received_3170699959813287.gif?ex=65ed28e2&is=65dab3e2&hm=9a64fb9ea0cd704ae9af9ebf141211458fa014bec35735277ba0a550ae0b8396&"; //รูปใหญ่
     const ikgasm2 =
       "https://media.discordapp.net/attachments/1191267411698143314/1211147196238532628/received_510388523880490.gif?ex=65ed23b9&is=65daaeb9&hm=163a0470e5af42f6c3a7214078c42846c5e484690d3b1d0b3de1cd98ea65ba4f&"; // รูปเล็ก
-    const ikgas2 = "🐶 💜"; // ข้อความตรง กำลังเล่น
+    const ikgas2 = "🐶Since you have a new person, I will have a new one too.💜"; // ข้อความตรง กำลังเล่น
     const ikga1 = "📺 YOUTUBE"; // ชื่อ ปุ่ม 1
     const ikga2 = "https://youtu.be/Fl16Kw8OxeI"; // ลิ้ง ปุ่ม 1
     const ikga3 = "📸 Instagram"; // ชื่อ ปุ่ม 2
