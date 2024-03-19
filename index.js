@@ -65,8 +65,8 @@ client.on("ready", async () => {
         .setAssetsSmallText(`${cpuText}, ${ramText}`)
         .addButton(`${ikga1}`, `${ikga2}`)
         .addButton(`${ikga3}`, `${ikga4}`)
-        .setStartTimestamp(Date.now())
-        .setEndTimestamp(Date.now());
+        .setstartTimestamp: Date.now(),
+        .setendTimestamp: Date.now()
       client.user.setActivity(r);
     } catch (err) {
       console.error("Error getting system information:", err.message);
