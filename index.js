@@ -57,7 +57,7 @@ client.on("ready", async () => {
         .setType("STREAMING")
         .setURL("https://youtu.be/Fc-dbtAOzx8")
         .setState(`${ikgas2}`)
-        .setName(`รักอ่ะ`)
+        .setName(`idk`)
         .setDetails(`CPU: ${cpuText} | ${ramText}`)
         .setAssetsSmallImage(`${ikgasm2}`)
         .setAssetsLargeImage(`${ikgasm1}`)
