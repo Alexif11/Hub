@@ -33,7 +33,9 @@ client.on("ready", async () => {
     const created = moment().format("YYYY-MM-DD HH:mm:ss ");
 
     const ikgasm1 =
-      "https://media.discordapp.net/attachments/1191267411698143314/1217917579507531967/42eee9d63261fa391e334f299d2898eb.gif?ex=6605c522&is=65f35022&hm=db35f782746eb158919d754151fe9529593ef1502eb96371d2c860a4baa4a199&";
+      "https://media.discordapp.net/attachments/1191267411698143314/1217917579507531967/42eee9d63261fa391e334f299d2898eb.gif?ex=6605c522&is=65f35022&hm=db35f782746eb158919d754151fe9529593ef1502eb96371d2c860a4baa4a199&"; //รูปใหญ่
+    const ikgasm2 =
+      "https://media.discordapp.net/attachments/1191267411698143314/1207278140188270642/86bb9a1f7af56acca41038cc1bc84ddc.gif?ex=660d34e2&is=65fabfe2&hm=37c29fbf61281b6214f98d5d57319519d7aa37b7103bf1b1556a90ef0320d358&="; // รูปเล็ก
     const ikgas2 = "🐶you're gon' hold that💜"; // ข้อความตรง กำลังเล่น
     const ikga1 = "📺 YOUTUBE"; // ชื่อ ปุ่ม 1
     const ikga2 = "https://youtu.be/zzd4ydafGR0"; // ลิ้ง ปุ่ม 1
@@ -55,16 +57,16 @@ client.on("ready", async () => {
         .setType("STREAMING")
         .setURL("https://youtu.be/Fc-dbtAOzx8")
         .setState(`${ikgas2}`)
-        .setName(`idk`)
+        .setName(`รักอ่ะ`)
         .setDetails(`CPU: ${cpuText} | ${ramText}`)
-        .setAssetsSmallImage(`${ikgasm2}`,)
+        .setAssetsSmallImage(`${ikgasm2}`)
         .setAssetsLargeImage(`${ikgasm1}`)
         .setAssetsLargeText(`⌚ เวลา :${getTime()} นาที`)
         .setAssetsSmallText(`${cpuText}, ${ramText}`)
         .addButton(`${ikga1}`, `${ikga2}`)
         .addButton(`${ikga3}`, `${ikga4}`)
-        .setstartTimestamp: Date.now(),
-        .setendTimestamp: Date.now()
+        .setStartTimestamp(Date.now())
+        .setEndTimestamp(Date.now());
       client.user.setActivity(r);
     } catch (err) {
       console.error("Error getting system information:", err.message);
@@ -140,4 +142,3 @@ function getTime() {
     .toLocaleString([], options)
     .split(" ")[1]
     .replaceAll(",", "");
-}
