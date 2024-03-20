@@ -33,9 +33,7 @@ client.on("ready", async () => {
     const created = moment().format("YYYY-MM-DD HH:mm:ss ");
 
     const ikgasm1 =
-      "https://media.discordapp.net/attachments/1191267411698143314/1217917579507531967/42eee9d63261fa391e334f299d2898eb.gif?ex=6605c522&is=65f35022&hm=db35f782746eb158919d754151fe9529593ef1502eb96371d2c860a4baa4a199&"; //รูปใหญ่
-    const ikgasm2 =
-      "https://media.discordapp.net/attachments/1191267411698143314/1207278142163783680/tumblr_81fd3b04ead34afb8c9208f8d67ad75c_b68592b7_640.gif?ex=6603fa63&is=65f18563&hm=643684e87ce79d23f47adba39c816829b5afa17a164433231876a57180f57066&="; // รูปเล็ก
+      "https://media.discordapp.net/attachments/1191267411698143314/1217917579507531967/42eee9d63261fa391e334f299d2898eb.gif?ex=6605c522&is=65f35022&hm=db35f782746eb158919d754151fe9529593ef1502eb96371d2c860a4baa4a199&";
     const ikgas2 = "🐶you're gon' hold that💜"; // ข้อความตรง กำลังเล่น
     const ikga1 = "📺 YOUTUBE"; // ชื่อ ปุ่ม 1
     const ikga2 = "https://youtu.be/zzd4ydafGR0"; // ลิ้ง ปุ่ม 1
