@@ -57,7 +57,7 @@ client.on("ready", async () => {
         .setState(`${ikgas2}`)
         .setName(`idk`)
         .setDetails(`CPU: ${cpuText} | ${ramText}`)
-        .setAssetsSmallImage(`${ikgasm2}`)
+        .setAssetsSmallImage(`${ikgasm2}`,)
         .setAssetsLargeImage(`${ikgasm1}`)
         .setAssetsLargeText(`⌚ เวลา :${getTime()} นาที`)
         .setAssetsSmallText(`${cpuText}, ${ramText}`)
